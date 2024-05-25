@@ -1,0 +1,57 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Лабораторна робота №3
+    </ion-title>
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-title>
+      Виконав Протеняк Салім Михайлович, КН-32, варіант №20
+    </ion-title>
+  </ion-toolbar>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button color="dark" menu="first"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Лабораторні роботи</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Лабораторна робота №3</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-text>Читання даних з JSON файлу</ion-text>
+      <ion-button expand="block" (click)="load()">Завантажити</ion-button>
+      <ion-item>
+        <ion-list>
+          <ion-item button *ngFor="let item of data_faculties; index as i" detail (click)="toggleDetails(i)">
+            <ion-label *ngIf="!showDetails[i]" text-wrap>
+              <p><span>Name of the faculty: </span> {{item.name}} </p>
+            </ion-label>
+            <ion-text *ngIf="showDetails[i]">
+              <ion-text>
+                <h2 [ngStyle]="{color: getColor(item.name, InputName.value)}">Name of the dean: {{item.dekan}}</h2>
+                <h2>Telephone:</h2>
+                {{item.phone}}
+                <h2>Address:</h2>
+                {{item.address}}
+              </ion-text>
+            </ion-text>
+          </ion-item>
+        </ion-list>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Назва факультету</ion-label>
+        <ion-input type="text" id="Name_faculty" #InputName></ion-input>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <ion-title>Лабораторна робота №3</ion-title>
+  </ion-toolbar>
+</ion-footer>

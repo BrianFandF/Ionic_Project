@@ -1,0 +1,7 @@
+{
+  "name": "SalimProject",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

@@ -1,0 +1,17 @@
+<ion-card>
+  <ion-card-header>
+    <ion-card-title>
+      <ion-label position="floating">ПІБ: </ion-label>
+      <ion-input [value]="student.fullName" #InputfullName></ion-input>
+    </ion-card-title>
+    <ion-card-subtitle>
+      <ion-label position="floating">Дата народження: </ion-label>
+      <ion-input [value]="student.dateOfBirth" #Inputdb></ion-input>
+      <ion-label position="floating">Адрес: </ion-label>
+      <ion-input [value]="student.address" #Inputaddress></ion-input>
+      <ion-label position="floating">Телефон: </ion-label>
+      <ion-input [value]="student.phoneNumber" #InputtNumber></ion-input>
+    </ion-card-subtitle>
+  </ion-card-header>
+  <ion-button (click)="save(InputfullName.value, Inputdb.value, Inputaddress.value, InputtNumber.value)">Зберігти</ion-button>
+</ion-card>

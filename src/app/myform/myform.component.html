@@ -1,0 +1,47 @@
+<form [formGroup]="studentForm" (ngSubmit)="onSubmit()">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Студент</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item>
+        <ion-label position="floating">ПІБ студента: </ion-label>
+        <ion-input id="student-full-name" type="text" formControlName="studentFullName"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Дата народження: </ion-label>
+        <ion-input id="student-date-birth" type="text" formControlName="studentDateOfBirth"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Адреса: </ion-label>
+        <ion-input id="student-address" type="text" formControlName="studentAddress"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Телефон: </ion-label>
+        <ion-input id="student-tel-number" type="text" formControlName="studentPhoneNumber"></ion-input>
+      </ion-item>
+      <ion-card formArrayName="additionalContacts">
+        <ion-card-header>
+          <ion-card-title>Додаткові засоби зв’язку</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-button color="tertiary" (click)="addAdditionalContacts()">
+            <ion-icon slot="start" name="add"></ion-icon>
+            Додати
+          </ion-button>
+          <ion-item *ngFor="let student of getControls(); let i = index">
+            <ion-input type="text" formControlName={{i}} placeholder="Email"></ion-input>
+            <ion-button color="tertiary" (click)="deleteAdditionalContacts(i)">
+              <ion-icon slot="start" name="trash"></ion-icon>
+              Видалити
+            </ion-button>
+          </ion-item>
+        </ion-card-content>
+      </ion-card>
+    </ion-card-content>
+  </ion-card>
+  <ion-button type="submit" color="my-color"
+  expand="block" fill="outline" [disabled]="!studentForm.valid">
+    Submit
+  </ion-button>
+</form>

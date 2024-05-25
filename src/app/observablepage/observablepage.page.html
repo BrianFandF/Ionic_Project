@@ -1,0 +1,47 @@
+<app-my-header name="Лабораторна робота №10"></app-my-header>
+
+<ion-content [fullscreen]="true">
+  <ion-item>
+    <ion-button (click)="nextTheater()">Наступний театр</ion-button>
+    <ion-label>
+      Поточний театр:
+    </ion-label>
+    <ion-label>
+      {{theat.name}}
+    </ion-label>
+  </ion-item>
+  <ion-card *ngFor="let actor of actorList.searchActor; let j = index">
+    <ion-item>{{actor.Surname}}</ion-item>
+    <ion-item>{{actor.Name}}</ion-item>
+    <ion-item>{{actor.age}}</ion-item>
+    <ion-item>{{actor.fee}}</ion-item>
+  </ion-card>
+  <ion-item>
+    <ion-label position="stacked">Введіть новий театр</ion-label>
+    <ion-input #InputTheat></ion-input>
+    <ion-button (click)="addTheater(InputTheat.value)">Додати театр</ion-button>
+  </ion-item>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>
+        Додати актора
+      </ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-label position="stacked">Введіть прізвище</ion-label>
+      <ion-input #InputSurname></ion-input>
+      <ion-label position="stacked">Введіть ім'я</ion-label>
+      <ion-input #InputName></ion-input>
+      <ion-label position="stacked">Введіть вік</ion-label>
+      <ion-input #InputAge></ion-input>
+      <ion-label position="stacked">Введіть гонорар</ion-label>
+      <ion-input #InputFee></ion-input>
+      <ion-button (click)="addActor(InputSurname.value,InputName.value,InputAge.value,InputFee.value)">Додати актора</ion-button>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <ion-title>Лабораторна робота №10</ion-title>
+  </ion-toolbar>
+</ion-footer>

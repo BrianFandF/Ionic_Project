@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "lab10-de206": {
+      "hosting": {
+        "app": [
+          "lab10-de206"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "lab10-de206"
+  }
+}

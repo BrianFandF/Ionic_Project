@@ -1,0 +1,52 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Модуль
+    </ion-title>
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-title>
+      Виконав Протеняк Салім Михайлович, КН-32, варіант №20
+    </ion-title>
+  </ion-toolbar>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button color="dark" menu="first"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Лабораторні роботи</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card>
+    <app-inputform (readyInfa)="appropriation($event)"></app-inputform>
+    <div *ngIf="show_result">
+      <ion-title>
+        <h1>Результати розрахунку</h1>
+      </ion-title>
+      <ion-item>
+        <h5>Сума послідовності: {{ summa }}</h5>
+      </ion-item>
+      <ion-item>
+        <h5>Добуток послідовності: {{ dobutok }}</h5>
+      </ion-item>
+      <ion-item>
+        <h5>Середнє значення послідовності: {{ average }}</h5>
+      </ion-item>
+      <ion-item>
+        <ion-grid>
+          <ion-row *ngFor="let chunk of chunkArray(sequence, 12)">
+            <ion-col size="12" size-sm="3" *ngFor="let number of chunk">
+              {{ number }}
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-item>
+    </div>
+  </ion-card>
+</ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <ion-title>Модульна робота</ion-title>
+  </ion-toolbar>
+</ion-footer>

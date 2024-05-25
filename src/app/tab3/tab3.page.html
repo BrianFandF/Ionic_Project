@@ -1,0 +1,42 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Лабораторна робота №1
+    </ion-title>
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-title>
+      Виконав Протеняк Салім Михайлович, КН-32, варіант №20
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Завдання №3</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p class="p_background">Згенерувати матрицю розміром NxN. 
+        Виокремити за допомогою кольору усі парні від’ємні елементи кратні 7.
+      </p>
+      <ion-item>
+        <ion-label position="floating">N</ion-label>
+        <ion-input type="number" id="n" value="3" #Inputn></ion-input>
+      </ion-item>
+      <ion-button expand="block" (click)="matrix(Inputn.value)">Згенерувати матрицю</ion-button>
+      <ion-item>
+        <ion-grid>
+          <ion-row *ngFor="let i of a">
+            <ion-col *ngFor="let j of i" [ngStyle]="{backgroundColor: getColor(j)}">{{j}}</ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <ion-title>Лабораторна робота №1</ion-title>
+  </ion-toolbar>
+</ion-footer>

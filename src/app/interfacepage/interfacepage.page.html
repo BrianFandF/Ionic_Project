@@ -1,0 +1,27 @@
+<app-my-header name="Лабораторна робота №6"></app-my-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card>
+    <ion-card-header>
+      <ion-title size="large">Завдання</ion-title>
+      <p>Необхідно додати у розроблений в попередній 
+        лабораторній роботі застосунок сторінку для 
+        роботи з інтерфейсами. Сторінку викликати у 
+        головному меню застосунку.
+      </p>
+      <p>Дана наступна ієрархія класів:</p>
+      <p>Журнал, книга, друковане видання, підручник</p>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-button (click)="ras()">Розрахунок</ion-button>
+      <ion-item>{{show_book}}</ion-item>
+      <ion-item>{{show_journak}}</ion-item>
+      <ion-item>{{show_textbook}}</ion-item>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <ion-title>Лабораторна робота №6</ion-title>
+  </ion-toolbar>
+</ion-footer>
